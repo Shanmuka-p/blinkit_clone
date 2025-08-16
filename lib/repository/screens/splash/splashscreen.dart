@@ -31,7 +31,7 @@ class _SplashscreenState extends State<Splashscreen> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Uihelper.CustomImage(img: "blinkit.jpg")],
+          children: [Uihelper.CustomImage(img: "blinkit.jpg", height: 300.0,width: double.infinity)],
         ),
       ),
     );
