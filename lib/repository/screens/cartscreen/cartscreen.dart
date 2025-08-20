@@ -51,7 +51,7 @@ class _CartscreenState extends State<Cartscreen> {
                 ),
                 Image.asset("assets/images/arrow_down.png"),
                 Padding(
-                  padding: const EdgeInsets.only(left: 70),
+                  padding: const EdgeInsets.only(left: 65),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(40),
