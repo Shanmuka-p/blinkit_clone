@@ -1,7 +1,7 @@
 import 'package:blinkit_clone/repository/screens/cartscreen/cartscreen.dart';
 import 'package:blinkit_clone/repository/screens/categories/categoryscreen.dart';
 import 'package:blinkit_clone/repository/screens/home/homescreen.dart';
-import 'package:blinkit_clone/repository/screens/profile/profilescreen.dart';
+import 'package:blinkit_clone/repository/screens/print/print.dart';
 import 'package:flutter/material.dart';
 
 class Bottomnavscreen extends StatefulWidget {
@@ -13,12 +13,7 @@ class Bottomnavscreen extends StatefulWidget {
 
 class _BottomnavscreenState extends State<Bottomnavscreen> {
   int curr_index = 0;
-  List<Widget> pages = [
-    Homescreen(),
-    Cartscreen(),
-    Categoryscreen(),
-    Profilescreen(),
-  ];
+  List<Widget> pages = [Homescreen(), Cartscreen(), Categoryscreen(), Print()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,8 +44,8 @@ class _BottomnavscreenState extends State<Bottomnavscreen> {
             label: "Category",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_rounded, size: 30),
-            label: "Profile",
+            icon: Icon(Icons.print, size: 30),
+            label: "Print",
           ),
         ],
       ),
