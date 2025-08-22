@@ -66,7 +66,7 @@ class _CategoryscreenState extends State<Categoryscreen> {
                 ),
                 Image.asset("assets/images/arrow_down.png"),
                 Padding(
-                  padding: const EdgeInsets.only(left: 65),
+                  padding: const EdgeInsets.only(left: 55),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(40),

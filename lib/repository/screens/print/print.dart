@@ -28,7 +28,7 @@ class _PrintState extends State<Print> {
               fontfamily: "bold",
             ),
             Uihelper.CustomText(
-              text: "16 minutes",
+              text: "14 minutes",
               color: Colors.black,
               FontWeight: FontWeight.w700,
               fontsize: 20,
@@ -52,7 +52,7 @@ class _PrintState extends State<Print> {
                 ),
                 Image.asset("assets/images/arrow_down.png"),
                 Padding(
-                  padding: const EdgeInsets.only(left: 65),
+                  padding: const EdgeInsets.only(left: 55),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(40),
@@ -110,13 +110,13 @@ class _PrintState extends State<Print> {
               text: "Print Store",
               color: Colors.black,
               FontWeight: FontWeight.w700,
-              fontsize: 40,
+              fontsize: 35,
             ),
             Uihelper.CustomText(
               text: "Blinkit ensures secure prints at every stage",
               color: Color(0XFF9C9C9C),
               FontWeight: FontWeight.w700,
-              fontsize: 16,
+              fontsize: 14,
             ),
             SizedBox(height: 60),
             Padding(
@@ -141,28 +141,28 @@ class _PrintState extends State<Print> {
                             text: "Documents",
                             color: Colors.black,
                             FontWeight: FontWeight.w700,
-                            fontsize: 16,
+                            fontsize: 14,
                           ),
 
                           Uihelper.CustomText(
                             text: "✦ Price starting at rs 3/page",
                             color: Color(0XFF9C9C9C),
                             FontWeight: FontWeight.w400,
-                            fontsize: 16,
+                            fontsize: 14,
                           ),
                           Uihelper.CustomText(
                             text: "✦ Paper quality: 70 GSM",
                             color: Color(0XFF9C9C9C),
                             FontWeight: FontWeight.w400,
-                            fontsize: 16,
+                            fontsize: 14,
                           ),
                           Uihelper.CustomText(
                             text: "✦ Single side prints",
                             color: Color(0XFF9C9C9C),
                             FontWeight: FontWeight.w400,
-                            fontsize: 16,
+                            fontsize: 14,
                           ),
-                          SizedBox(height: 30),
+                          SizedBox(height: 20),
                           ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor: WidgetStateProperty.all(

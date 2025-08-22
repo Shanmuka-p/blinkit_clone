@@ -44,14 +44,14 @@ class _HomescreenState extends State<Homescreen> {
                   fontfamily: "bold",
                 ),
                 Uihelper.CustomText(
-                  text: "Shanmuka Reddy, G.mamidada - ",
+                  text: "Shanmuka Reddy,G.mamidada - ",
                   color: Colors.black,
                   FontWeight: FontWeight.w400,
                   fontsize: 12,
                 ),
                 Image.asset("assets/images/arrow_down.png"),
                 Padding(
-                  padding: const EdgeInsets.only(left: 65),
+                  padding: const EdgeInsets.only(left: 55),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
