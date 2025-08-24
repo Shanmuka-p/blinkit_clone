@@ -9,6 +9,10 @@ class Cartscreen extends StatefulWidget {
 }
 
 class _CartscreenState extends State<Cartscreen> {
+  var cart = [
+    {"img": "dairy.png", "text": "Amul Taaza Toned \nFresh Milk"},
+    {"img": "vegetable.png", "text": "vegetables"},
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -125,6 +129,90 @@ class _CartscreenState extends State<Cartscreen> {
                 fontsize: 10,
               ),
             ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.only(right: 250),
+              child: Uihelper.CustomText(
+                text: "Bestsellers",
+                color: Colors.black,
+                FontWeight: FontWeight.w600,
+                fontsize: 16,
+                fontfamily: "bold",
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: [
+                  Stack(
+                    clipBehavior: Clip.none,
+                    alignment: Alignment.bottomCenter,
+                    children: [
+                      Container(
+                        height: 158,
+                        width: 128,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/dairy.png"),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 70,
+                        bottom: -10,
+                        child: OutlinedButton(
+                          onPressed: () {},
+                          style: OutlinedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 6,
+                              vertical: 6,
+                            ),
+                            side: BorderSide(
+                              color: Color(0XFF27AF34),
+                              width: 2,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            backgroundColor: Colors.white,
+                          ),
+                          child: Text(
+                            "Add",
+                            style: TextStyle(color: Color(0XFF27AF34)),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            // SizedBox(
+            //   height: 150,
+            //   child: Expanded(
+            //     child: ListView.builder(
+            //       scrollDirection: Axis.horizontal,
+            //       itemCount: cart.length,
+            //       itemBuilder: (context, index) {
+            //         return Container(
+            //           height: 108,
+            //           width: 96,
+            //           decoration: BoxDecoration(
+            //             borderRadius: BorderRadius.circular(16),
+            //             image: DecorationImage(
+            //               image: AssetImage(
+            //                 "assets/images/${cart[index]["img"]}",
+            //               ),
+            //               fit: BoxFit.contain,
+            //             ),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
