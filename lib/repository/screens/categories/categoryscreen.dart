@@ -322,7 +322,7 @@ class _CategoryscreenState extends State<Categoryscreen> {
                           ),
                         ),
                         Uihelper.CustomText(
-                          text: four[index]["words"].toString(),
+                          text: four[index]["text"].toString(),
                           color: Colors.black,
                           FontWeight: FontWeight.w400,
                           fontsize: 10,

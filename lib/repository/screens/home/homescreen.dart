@@ -9,6 +9,12 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+  var home = [
+    {"img": "assets/images/light.png", "text": "Lights, Diyas \n& Candles"},
+    {"img": "assets/images/gift.png", "text": "Diwali \nGifts"},
+    {"img": "assets/images/gadgets.png", "text": "Appliances \n& Gadgets"},
+    {"img": "assets/images/live.png", "text": "Home \n& Living"},
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +105,79 @@ class _HomescreenState extends State<Homescreen> {
           ],
         ),
       ),
-      body: Center(child: Text("Home Screen")),
+      body: Stack(
+        alignment: AlignmentGeometry.topCenter,
+        children: [
+          Container(
+            height: 196,
+            width: double.infinity,
+            decoration: BoxDecoration(color: Color(0XFFEC0505)),
+          ),
+          Positioned(
+            top: 0,
+            child: Row(
+              children: [
+                Image.asset("assets/images/home.png"),
+                Image.asset("assets/images/home2.png"),
+                Center(
+                  child: Uihelper.CustomText(
+                    text: "Mega Diwali Sale",
+                    color: Colors.white,
+                    FontWeight: FontWeight.w700,
+                    fontsize: 20,
+                    fontfamily: "bold",
+                  ),
+                ),
+                Image.asset("assets/images/home2.png"),
+                Image.asset("assets/images/home.png"),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 50.0, left: 10),
+            child: SizedBox(
+              height: 208,
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: 4,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: Stack(
+                      children: [
+                        Container(
+                          height: 108,
+                          width: 86,
+                          decoration: BoxDecoration(
+                            color: Color(0XFFEAD3D3),
+                            borderRadius: BorderRadius.circular(16),
+                            //image: DecorationImage(image: AssetImage(home[index]["img"].toString(),),fit: BoxBorder.fromLTRB(bottom: BorderSide()))
+                          ),
+                        ),
+                        Positioned(
+                          top: 5,
+                          left: 10,
+                          child: Uihelper.CustomText(
+                            text: home[index]["text"].toString(),
+                            color: Colors.black,
+                            FontWeight: FontWeight.w600,
+                            fontsize: 10,
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 99,
+                          child: Image.asset(home[index]["img"].toString()),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

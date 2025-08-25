@@ -149,8 +149,8 @@ class _CartscreenState extends State<Cartscreen> {
                     alignment: Alignment.bottomCenter,
                     children: [
                       Container(
-                        height: 158,
-                        width: 128,
+                        height: 108,
+                        width: 96,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
@@ -159,32 +159,150 @@ class _CartscreenState extends State<Cartscreen> {
                           ),
                         ),
                       ),
+
                       Positioned(
-                        left: 70,
-                        bottom: -10,
-                        child: OutlinedButton(
-                          onPressed: () {},
-                          style: OutlinedButton.styleFrom(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 6,
-                              vertical: 6,
+                        left: 60,
+                        bottom: -5,
+                        child: SizedBox(
+                          height: 28,
+                          width: 40,
+                          child: OutlinedButton(
+                            onPressed: () {},
+                            style: OutlinedButton.styleFrom(
+                              //minimumSize: Size(1, 2),
+                              padding: EdgeInsets.zero,
+                              side: BorderSide(
+                                color: Color(0XFF27AF34),
+                                //width: 2,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              backgroundColor: Colors.white,
                             ),
-                            side: BorderSide(
-                              color: Color(0XFF27AF34),
-                              width: 2,
+                            child: Text(
+                              "Add",
+                              style: TextStyle(
+                                color: Color(0XFF27AF34),
+                                fontSize: 6,
+                              ),
                             ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            backgroundColor: Colors.white,
-                          ),
-                          child: Text(
-                            "Add",
-                            style: TextStyle(color: Color(0XFF27AF34)),
                           ),
                         ),
                       ),
                     ],
+                  ),
+                  // Column(
+                  //   mainAxisAlignment: MainAxisAlignment.start,
+                  //   children: [
+                  //     Uihelper.CustomText(
+                  //       text: "Amul Taaza Toned \nFresh Milk",
+                  //       color: Colors.black,
+                  //       FontWeight: FontWeight.w400,
+                  //       fontsize: 8,
+                  //     ),
+                  //     Image.asset("assets/images/timer.png"),
+                  //   ],
+                  // ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Stack(
+                      clipBehavior: Clip.none,
+                      alignment: Alignment.bottomCenter,
+                      children: [
+                        Container(
+                          height: 108,
+                          width: 96,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image: AssetImage("assets/images/vegetable.png"),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ),
+
+                        Positioned(
+                          left: 60,
+                          bottom: -5,
+                          child: SizedBox(
+                            height: 28,
+                            width: 40,
+                            child: OutlinedButton(
+                              onPressed: () {},
+                              style: OutlinedButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                                side: BorderSide(
+                                  color: Color(0XFF27AF34),
+                                  width: 2,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                backgroundColor: Colors.white,
+                              ),
+                              child: Text(
+                                "Add",
+                                style: TextStyle(
+                                  color: Color(0XFF27AF34),
+                                  fontSize: 6,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Stack(
+                      clipBehavior: Clip.none,
+                      alignment: Alignment.bottomCenter,
+                      children: [
+                        Container(
+                          height: 108,
+                          width: 96,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image: AssetImage("assets/images/tomato.png"),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ),
+
+                        Positioned(
+                          left: 60,
+                          bottom: -5,
+                          child: SizedBox(
+                            height: 28,
+                            width: 40,
+                            child: OutlinedButton(
+                              onPressed: () {},
+                              style: OutlinedButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                                side: BorderSide(
+                                  color: Color(0XFF27AF34),
+                                  width: 2,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                backgroundColor: Colors.white,
+                              ),
+                              child: Text(
+                                "Add",
+                                style: TextStyle(
+                                  color: Color(0XFF27AF34),
+                                  fontSize: 6,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
