@@ -28,7 +28,7 @@ class _PrintState extends State<Print> {
               fontfamily: "bold",
             ),
             Uihelper.CustomText(
-              text: "14 minutes",
+              text: "16 minutes",
               color: Colors.black,
               FontWeight: FontWeight.w700,
               fontsize: 20,

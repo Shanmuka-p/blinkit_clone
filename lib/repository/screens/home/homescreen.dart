@@ -15,6 +15,18 @@ class _HomescreenState extends State<Homescreen> {
     {"img": "assets/images/gadgets.png", "text": "Appliances \n& Gadgets"},
     {"img": "assets/images/live.png", "text": "Home \n& Living"},
   ];
+  var home1 = [
+    {"img": "deep.png", "text": "Golden Glass \nWooden Lid Candle"},
+    {"img": "home_sweets.png", "text": "Royal Gulab Jamun \nBy Bikano"},
+    {"img": "banner.png", "text": "Bikaji Bhujia"},
+  ];
+  var Grocery = [
+    {"img": "veg.png", "text": "Vegetables & \nFruits"},
+    {"img": "atta.png", "text": "Atta, Dal & \nRice"},
+    {"img": "oil.png", "text": "Oil, Ghee & \nMasala"},
+    {"img": "milk.png", "text": "Dairy, Bread & \nMilk"},
+    {"img": "bis.png", "text": "Biscuits &  \nBakery"},
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,7 +121,7 @@ class _HomescreenState extends State<Homescreen> {
         alignment: AlignmentGeometry.topCenter,
         children: [
           Container(
-            height: 196,
+            height: 176,
             width: double.infinity,
             decoration: BoxDecoration(color: Color(0XFFEC0505)),
           ),
@@ -134,7 +146,7 @@ class _HomescreenState extends State<Homescreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 50.0, left: 10),
+            padding: const EdgeInsets.only(top: 55.0, left: 10),
             child: SizedBox(
               height: 208,
               child: ListView.builder(
@@ -175,6 +187,147 @@ class _HomescreenState extends State<Homescreen> {
                 },
               ),
             ),
+          ),
+          //SizedBox(width: 20),
+          ListView.builder(
+            itemCount: 3,
+            //shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Row(
+                  children: [
+                    Stack(
+                      clipBehavior: Clip.none,
+                      alignment: Alignment.bottomCenter,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 108,
+                              width: 93,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(16),
+                                //color: Colors.amber,
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/images/${home1[index]["img"]}",
+                                  ),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Positioned(
+                          left: 60,
+                          bottom: 210,
+                          child: SizedBox(
+                            height: 28,
+                            width: 40,
+                            child: OutlinedButton(
+                              onPressed: () {},
+                              style: OutlinedButton.styleFrom(
+                                //minimumSize: Size(1, 2),
+                                padding: EdgeInsets.zero,
+                                side: BorderSide(
+                                  color: Color(0XFF27AF34),
+                                  width: 2,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                backgroundColor: Colors.white,
+                              ),
+                              child: Text(
+                                "Add",
+                                style: TextStyle(
+                                  color: Color(0XFF27AF34),
+                                  fontSize: 6,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 10,
+                          bottom: 185,
+                          child: Uihelper.CustomText(
+                            text: home1[index]["text"].toString(),
+                            color: Colors.black,
+                            FontWeight: FontWeight.w700,
+                            fontsize: 8,
+                            fontfamily: "bold",
+                          ),
+                        ),
+                        Positioned(
+                          left: 20,
+                          bottom: 155,
+                          child: Uihelper.CustomText(
+                            text: "₹ 79",
+                            color: Colors.black,
+                            FontWeight: FontWeight.w700,
+                            fontsize: 15,
+                            fontfamily: "bold",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+          Positioned(
+            left: 20,
+            bottom: 140,
+            child: Uihelper.CustomText(
+              text: "Grocery & Kitchen",
+              color: Colors.black,
+              FontWeight: FontWeight.w700,
+              fontsize: 14,
+              fontfamily: "bold",
+            ),
+          ),
+          ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 5,
+            itemBuilder: (context, index) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 20.0,
+                      right: 20.0,
+                      top: 20,
+                    ),
+                    child: Container(
+                      height: 78,
+                      width: 71,
+                      decoration: BoxDecoration(
+                        color: Color(0XFFD9EBEB),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Uihelper.CustomImage(
+                        img: Grocery[index]["img"].toString(),
+                        height: double.infinity,
+                        width: double.infinity,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Uihelper.CustomText(
+                    text: Grocery[index]["text"].toString(),
+                    color: Colors.black,
+                    FontWeight: FontWeight.w400,
+                    fontsize: 10,
+                  ),
+                ],
+              );
+            },
           ),
         ],
       ),
