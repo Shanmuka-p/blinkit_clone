@@ -1,4 +1,5 @@
 import 'package:blinkit_clone/repository/screens/bottomnav/bottomnavscreen.dart';
+import 'package:blinkit_clone/repository/screens/bottomnav/saloman_bottom_bar.dart';
 import 'package:blinkit_clone/repository/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +69,7 @@ class Loginscreen extends StatelessWidget {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Bottomnavscreen(),
+                            builder: (context) => SalomanBottomBar(),
                           ),
                         );
                       },
