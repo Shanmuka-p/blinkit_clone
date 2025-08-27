@@ -27,35 +27,48 @@ class _SalomanBottomBarState extends State<SalomanBottomBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[_currentIndex],
-      bottomNavigationBar: SalomonBottomBar(
-        backgroundColor: colors[_currentIndex],
-        currentIndex: _currentIndex,
-        onTap: (i) => setState(() => _currentIndex = i),
-        items: [
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.home),
-            title: const Text("Home"),
-            selectedColor: Colors.redAccent,
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Container(
+          height: 80,
+          decoration: BoxDecoration(
+            color: colors[_currentIndex],
+            borderRadius: BorderRadius.all(Radius.circular(25)),
           ),
+          child: ClipRRect(
+            borderRadius: const BorderRadius.all(Radius.circular(25)),
+            child: SalomonBottomBar(
+              //backgroundColor: colors[_currentIndex],
+              currentIndex: _currentIndex,
+              onTap: (i) => setState(() => _currentIndex = i),
+              items: [
+                SalomonBottomBarItem(
+                  icon: const Icon(Icons.home),
+                  title: const Text("Home"),
+                  selectedColor: Colors.redAccent,
+                ),
 
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.shopping_cart),
-            title: const Text("Cart"),
-            selectedColor: Colors.green,
-          ),
+                SalomonBottomBarItem(
+                  icon: const Icon(Icons.shopping_cart),
+                  title: const Text("Cart"),
+                  selectedColor: Colors.green,
+                ),
 
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.category_outlined),
-            title: const Text("Category"),
-            selectedColor: Colors.teal,
-          ),
+                SalomonBottomBarItem(
+                  icon: const Icon(Icons.category_outlined),
+                  title: const Text("Category"),
+                  selectedColor: Colors.teal,
+                ),
 
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.print),
-            title: const Text("Print"),
-            selectedColor: Colors.blue,
+                SalomonBottomBarItem(
+                  icon: const Icon(Icons.print),
+                  title: const Text("Print"),
+                  selectedColor: Colors.blue,
+                ),
+              ],
+            ),
           ),
-        ],
+        ),
       ),
     );
   }
