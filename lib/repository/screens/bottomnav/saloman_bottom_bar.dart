@@ -26,34 +26,30 @@ class _SalomanBottomBarState extends State<SalomanBottomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[_currentIndex], // display selected page
+      body: pages[_currentIndex],
       bottomNavigationBar: SalomonBottomBar(
         backgroundColor: colors[_currentIndex],
         currentIndex: _currentIndex,
         onTap: (i) => setState(() => _currentIndex = i),
         items: [
-          /// Home
           SalomonBottomBarItem(
             icon: const Icon(Icons.home),
             title: const Text("Home"),
             selectedColor: Colors.redAccent,
           ),
 
-          /// Search
           SalomonBottomBarItem(
             icon: const Icon(Icons.shopping_cart),
             title: const Text("Cart"),
             selectedColor: Colors.green,
           ),
 
-          /// Profile
           SalomonBottomBarItem(
             icon: const Icon(Icons.category_outlined),
             title: const Text("Category"),
             selectedColor: Colors.teal,
           ),
 
-          /// Settings
           SalomonBottomBarItem(
             icon: const Icon(Icons.print),
             title: const Text("Print"),
