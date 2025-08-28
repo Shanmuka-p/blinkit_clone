@@ -12,7 +12,7 @@ class _PrintState extends State<Print> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[100],
+      //backgroundColor: Colors.white,
       appBar: AppBar(
         toolbarHeight: 180,
         backgroundColor: Color(0XFFF7CB45),
@@ -124,17 +124,24 @@ class _PrintState extends State<Print> {
               child: Container(
                 height: 200,
                 width: double.infinity,
-                decoration: BoxDecoration(color: Colors.white),
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Stack(
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                decoration: BoxDecoration(color: Colors.amber[100]),
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    //SizedBox(height: 20),
+                    Center(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         mainAxisAlignment: MainAxisAlignment.end,
-                        children: [Image.asset("assets/images/print.png")],
+                        children: [
+                          //SizedBox(height: 20),
+                          Image.asset("assets/images/print.png"),
+                        ],
                       ),
-                      Column(
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Uihelper.CustomText(
@@ -143,7 +150,7 @@ class _PrintState extends State<Print> {
                             FontWeight: FontWeight.w700,
                             fontsize: 14,
                           ),
-
+                          SizedBox(height: 10),
                           Uihelper.CustomText(
                             text: "✦ Price starting at rs 3/page",
                             color: Color(0XFF9C9C9C),
@@ -177,8 +184,8 @@ class _PrintState extends State<Print> {
                           ),
                         ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
