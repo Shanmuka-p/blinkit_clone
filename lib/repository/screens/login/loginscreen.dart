@@ -1,5 +1,6 @@
 import 'package:blinkit_clone/repository/screens/bottomnav/bottomnavscreen.dart';
 import 'package:blinkit_clone/repository/screens/bottomnav/saloman_bottom_bar.dart';
+import 'package:blinkit_clone/repository/screens/login/number.dart';
 import 'package:blinkit_clone/repository/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
 
@@ -107,12 +108,30 @@ class Loginscreen extends StatelessWidget {
                     fontsize: 10,
                   ),
                   SizedBox(height: 20),
-                  Uihelper.CustomText(
-                    text: "or login with phone number",
-                    color: Color(0XFF269237),
-                    FontWeight: FontWeight.w400,
-                    fontsize: 17,
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => Number()),
+                      );
+                    },
+
+                    child: Text(
+                      "or login with phone number",
+                      style: TextStyle(
+                        color: Color(0XFF269237),
+                        fontSize: 17,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
                   ),
+
+                  // Uihelper.CustomText(
+                  //   text: "or login with phone number",
+                  //   color: Color(0XFF269237),
+                  //   FontWeight: FontWeight.w400,
+                  //   fontsize: 17,
+                  // ),
                 ],
               ),
             ),
