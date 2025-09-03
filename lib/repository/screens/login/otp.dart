@@ -1,70 +1,19 @@
 import 'package:blinkit_clone/domain/constants/appcolors.dart';
-import 'package:blinkit_clone/repository/screens/login/otp.dart';
 import 'package:blinkit_clone/repository/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
 
-class Number extends StatefulWidget {
-  const Number({super.key});
+class Otp extends StatefulWidget {
+  const Otp({super.key});
 
   @override
-  State<Number> createState() => _NumberState();
+  State<Otp> createState() => _OtpState();
 }
 
-class _NumberState extends State<Number> {
-  TextEditingController countrycode = TextEditingController();
-  @override
-  void initState() {
-    countrycode.text = "+91";
-
-    super.initState();
-  }
-
+class _OtpState extends State<Otp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      // body: Padding(
-      //   padding: const EdgeInsets.all(20.0),
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: [
-      //       Center(
-      //         child: Uihelper.CustomText(
-      //           text: "Enter Your Number",
-      //           color: Colors.black,
-      //           FontWeight: FontWeight.w700,
-      //           fontsize: 20,
-      //           fontfamily: "bold",
-      //         ),
-      //       ),
-      //       Padding(
-      //         padding: const EdgeInsets.all(10.0),
-      //         child: Container(
-      //           height: 50,
-      //           width: double.infinity,
-      //           decoration: BoxDecoration(
-      //             color: Colors.white,
-      //             borderRadius: BorderRadius.all(Radius.circular(16)),
-      //           ),
-      //           child: TextFormField(
-      //             keyboardType: TextInputType.numberWithOptions(decimal: false),
-      //             //textAlign: TextAlign.center,
-      //             decoration: InputDecoration(
-      //               //slabelText: "Enter the number",
-      //               alignLabelWithHint: false,
-      //               disabledBorder: InputBorder.none,
-      //               focusedBorder: InputBorder.none,
-      //               enabledBorder: InputBorder.none,
-      //               hintText: "Enter the number",
-      //               hintTextDirection: TextDirection.ltr,
-      //             ),
-      //             style: TextStyle(color: Colors.black),
-      //           ),
-      //         ),
-      //       ),
-      //     ],
-      //   ),
-      // ),
       body: Stack(
         children: [
           Positioned(
@@ -124,7 +73,7 @@ class _NumberState extends State<Number> {
                           SizedBox(
                             width: 70,
                             child: TextField(
-                              controller: countrycode,
+                              //controller: countrycode,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 prefixIcon: Icon(
@@ -158,14 +107,9 @@ class _NumberState extends State<Number> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.amber,
                         ),
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                            (context),
-                            MaterialPageRoute(builder: (context) => Otp()),
-                          );
-                        },
+                        onPressed: () {},
                         child: Text(
-                          "Send Otp",
+                          "Submit",
                           selectionColor: Colors.amber,
                           style: TextStyle(color: Colors.white, fontSize: 15),
                         ),
