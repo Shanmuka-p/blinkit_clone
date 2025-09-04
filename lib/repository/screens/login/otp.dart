@@ -1,6 +1,7 @@
 import 'package:blinkit_clone/domain/constants/appcolors.dart';
 import 'package:blinkit_clone/repository/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
+import 'package:pinput/pinput.dart';
 
 class Otp extends StatefulWidget {
   const Otp({super.key});
@@ -12,6 +13,30 @@ class Otp extends StatefulWidget {
 class _OtpState extends State<Otp> {
   @override
   Widget build(BuildContext context) {
+    final defaultPinTheme = PinTheme(
+      width: 56,
+      height: 56,
+      textStyle: TextStyle(
+        fontSize: 30,
+        color: Color.fromRGBO(30, 60, 87, 1),
+        fontWeight: FontWeight.w700,
+      ),
+      decoration: BoxDecoration(
+        border: Border.all(color: Color.fromRGBO(234, 239, 243, 1)),
+        borderRadius: BorderRadius.circular(20),
+      ),
+    );
+
+    final focusedPinTheme = defaultPinTheme.copyDecorationWith(
+      border: Border.all(color: Color.fromRGBO(114, 178, 238, 1)),
+      borderRadius: BorderRadius.circular(8),
+    );
+
+    final submittedPinTheme = defaultPinTheme.copyWith(
+      decoration: defaultPinTheme.decoration!.copyWith(
+        color: Color.fromRGBO(234, 239, 243, 1),
+      ),
+    );
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -54,7 +79,7 @@ class _OtpState extends State<Otp> {
                   children: [
                     Center(
                       child: Uihelper.CustomText(
-                        text: "Login",
+                        text: "Verification",
                         color: Colors.black,
                         FontWeight: FontWeight.w700,
                         fontsize: 25,
@@ -62,43 +87,15 @@ class _OtpState extends State<Otp> {
                       ),
                     ),
                     SizedBox(height: 30),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.blueGrey),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        //color: Colors.blueGrey,
-                      ),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 70,
-                            child: TextField(
-                              //controller: countrycode,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                prefixIcon: Icon(
-                                  Icons.mobile_friendly,
-                                  color: Appcolors.Scaffoldbackground,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          Text(
-                            "|",
-                            style: TextStyle(color: Colors.black, fontSize: 30),
-                          ),
-                          Expanded(
-                            child: TextField(
-                              decoration: InputDecoration(
-                                hintText: "Phone",
-                                border: InputBorder.none,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    Pinput(
+                      obscureText: true,
+                      keyboardType: TextInputType.number,
+                      length: 6,
+                      pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+                      showCursor: true,
+                      onCompleted: (pin) => print(pin),
                     ),
+
                     SizedBox(height: 30),
                     SizedBox(
                       height: 50,

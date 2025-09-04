@@ -107,7 +107,7 @@ class Loginscreen extends StatelessWidget {
                     FontWeight: FontWeight.w400,
                     fontsize: 10,
                   ),
-                  SizedBox(height: 20),
+                  //SizedBox(height: 10),
                   TextButton(
                     onPressed: () {
                       Navigator.pushReplacement(
@@ -115,7 +115,6 @@ class Loginscreen extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => Number()),
                       );
                     },
-
                     child: Text(
                       "or login with phone number",
                       style: TextStyle(

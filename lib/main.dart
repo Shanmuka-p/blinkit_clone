@@ -1,3 +1,5 @@
+import 'package:blinkit_clone/repository/screens/login/number.dart';
+import 'package:blinkit_clone/repository/screens/login/otp.dart';
 import 'package:blinkit_clone/repository/screens/splash/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
@@ -27,7 +29,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Blinkit',
-      home: Splashscreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Splashscreen(),
+        '/number': (context) => const Number(),
+        '/otp': (context) => const Otp(),
+      },
     );
   }
 }

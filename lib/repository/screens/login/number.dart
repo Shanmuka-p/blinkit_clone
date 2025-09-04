@@ -122,7 +122,7 @@ class _NumberState extends State<Number> {
                       child: Row(
                         children: [
                           SizedBox(
-                            width: 70,
+                            width: 80,
                             child: TextField(
                               controller: countrycode,
                               decoration: InputDecoration(
@@ -159,15 +159,44 @@ class _NumberState extends State<Number> {
                           backgroundColor: Colors.amber,
                         ),
                         onPressed: () {
-                          Navigator.pushReplacement(
-                            (context),
-                            MaterialPageRoute(builder: (context) => Otp()),
-                          );
+                          Navigator.pushNamed(context, '/otp');
                         },
                         child: Text(
                           "Send Otp",
                           selectionColor: Colors.amber,
                           style: TextStyle(color: Colors.white, fontSize: 15),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 30),
+                    Text("OR"),
+                    SizedBox(height: 40),
+                    SizedBox(
+                      height: 50,
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.grey[200],
+                        ),
+                        onPressed: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                "assets/images/google.jpeg",
+                              ),
+                              radius: 15,
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              "Sign in with Google",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),

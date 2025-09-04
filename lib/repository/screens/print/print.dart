@@ -169,7 +169,7 @@ class _PrintState extends State<Print> {
                             FontWeight: FontWeight.w400,
                             fontsize: 14,
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: 10),
                           ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor: WidgetStateProperty.all(

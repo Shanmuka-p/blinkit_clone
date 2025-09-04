@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   device_preview: ^1.2.0
   salomon_bottom_bar: ^3.3.2
+  pinput: ^5.0.2
 
 dev_dependencies:
   flutter_test:
