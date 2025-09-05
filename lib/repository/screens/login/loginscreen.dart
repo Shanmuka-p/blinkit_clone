@@ -1,4 +1,3 @@
-import 'package:blinkit_clone/repository/screens/bottomnav/bottomnavscreen.dart';
 import 'package:blinkit_clone/repository/screens/bottomnav/saloman_bottom_bar.dart';
 import 'package:blinkit_clone/repository/screens/login/number.dart';
 import 'package:blinkit_clone/repository/widgets/uihelper.dart';

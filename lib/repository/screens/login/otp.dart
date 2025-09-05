@@ -1,4 +1,3 @@
-import 'package:blinkit_clone/domain/constants/appcolors.dart';
 import 'package:blinkit_clone/repository/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
@@ -27,12 +26,12 @@ class _OtpState extends State<Otp> {
       ),
     );
 
-    final focusedPinTheme = defaultPinTheme.copyDecorationWith(
+    defaultPinTheme.copyDecorationWith(
       border: Border.all(color: Color.fromRGBO(114, 178, 238, 1)),
       borderRadius: BorderRadius.circular(8),
     );
 
-    final submittedPinTheme = defaultPinTheme.copyWith(
+    defaultPinTheme.copyWith(
       decoration: defaultPinTheme.decoration!.copyWith(
         color: Color.fromRGBO(234, 239, 243, 1),
       ),
@@ -40,24 +39,48 @@ class _OtpState extends State<Otp> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
+        clipBehavior: Clip.none,
         children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            height: 500,
-            child: Container(
-              //height: 300,
-              //width: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/blinkit.jpg"),
-                  fit: BoxFit.cover,
+          Stack(
+            children: [
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                height: 500,
+                child: Container(
+                  //height: 300,
+                  //width: double.infinity,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/blinkit.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(30),
+                    ),
+                    color: Colors.white,
+                  ),
                 ),
-                borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
-                color: Colors.white,
               ),
-            ),
+              Positioned(
+                top: 40,
+                left: 10,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    color: Colors.white,
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.arrow_back_ios),
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
           ),
           Positioned(
             bottom: 0,
