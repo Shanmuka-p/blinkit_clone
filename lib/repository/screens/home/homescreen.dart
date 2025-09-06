@@ -37,34 +37,34 @@ class _HomescreenState extends State<Homescreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Uihelper.CustomText(
+            Uihelper.customText(
               text: "BlinkIt in",
               color: Colors.black,
-              FontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontsize: 12,
               fontfamily: "bold",
             ),
-            Uihelper.CustomText(
+            Uihelper.customText(
               text: "16 minutes",
               color: Colors.black,
-              FontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontsize: 20,
               fontfamily: "bold",
             ),
 
             Row(
               children: [
-                Uihelper.CustomText(
+                Uihelper.customText(
                   text: "HOME - ",
                   color: Colors.black,
-                  FontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.bold,
                   fontsize: 12,
                   fontfamily: "bold",
                 ),
-                Uihelper.CustomText(
+                Uihelper.customText(
                   text: "Shanmuka Reddy,G.mamidada - ",
                   color: Colors.black,
-                  FontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w400,
                   fontsize: 12,
                 ),
                 Image.asset("assets/images/arrow_down.png"),
@@ -132,10 +132,10 @@ class _HomescreenState extends State<Homescreen> {
                 Image.asset("assets/images/home.png"),
                 Image.asset("assets/images/home2.png"),
                 Center(
-                  child: Uihelper.CustomText(
+                  child: Uihelper.customText(
                     text: "Mega Diwali Sale",
                     color: Colors.white,
-                    FontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w700,
                     fontsize: 20,
                     fontfamily: "bold",
                   ),
@@ -170,10 +170,10 @@ class _HomescreenState extends State<Homescreen> {
                         Positioned(
                           top: 5,
                           left: 10,
-                          child: Uihelper.CustomText(
+                          child: Uihelper.customText(
                             text: home[index]["text"].toString(),
                             color: Colors.black,
-                            FontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w600,
                             fontsize: 10,
                           ),
                         ),
@@ -251,13 +251,14 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                           ),
                         ),
+                       // SizedBox(height: 10),
                         Positioned(
                           left: 10,
                           bottom: 185,
-                          child: Uihelper.CustomText(
+                          child: Uihelper.customText(
                             text: home1[index]["text"].toString(),
                             color: Colors.black,
-                            FontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w700,
                             fontsize: 8,
                             fontfamily: "bold",
                           ),
@@ -265,10 +266,10 @@ class _HomescreenState extends State<Homescreen> {
                         Positioned(
                           left: 20,
                           bottom: 155,
-                          child: Uihelper.CustomText(
+                          child: Uihelper.customText(
                             text: "₹ 79",
                             color: Colors.black,
-                            FontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w700,
                             fontsize: 15,
                             fontfamily: "bold",
                           ),
@@ -283,10 +284,10 @@ class _HomescreenState extends State<Homescreen> {
           Positioned(
             left: 20,
             bottom: 140,
-            child: Uihelper.CustomText(
+            child: Uihelper.customText(
               text: "Grocery & Kitchen",
               color: Colors.black,
-              FontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontsize: 14,
               fontfamily: "bold",
             ),
@@ -311,18 +312,18 @@ class _HomescreenState extends State<Homescreen> {
                         color: Color(0XFFD9EBEB),
                         borderRadius: BorderRadius.circular(16),
                       ),
-                      child: Uihelper.CustomImage(
+                      child: Uihelper.customImage(
                         img: Grocery[index]["img"].toString(),
                         height: double.infinity,
                         width: double.infinity,
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Uihelper.CustomText(
+                  SizedBox(height: 20),
+                  Uihelper.customText(
                     text: Grocery[index]["text"].toString(),
                     color: Colors.black,
-                    FontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w400,
                     fontsize: 10,
                   ),
                 ],

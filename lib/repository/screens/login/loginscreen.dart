@@ -12,22 +12,22 @@ class Loginscreen extends StatelessWidget {
       body: Column(
         //mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Uihelper.CustomImage(
+          Uihelper.customImage(
             img: "Blinkit Onboarding Screen.png",
             height: 330.0,
             width: double.infinity,
           ),
           SizedBox(height: 10),
-          Uihelper.CustomImage(
+          Uihelper.customImage(
             img: "logo.png",
             height: 200.0,
             width: double.infinity,
           ),
           SizedBox(height: 20),
-          Uihelper.CustomText(
+          Uihelper.customText(
             text: "India’s last minute app",
             color: Colors.black,
-            FontWeight: FontWeight.bold,
+            fontWeight: FontWeight.bold,
             fontsize: 20,
             fontfamily: "bold",
           ),
@@ -46,17 +46,17 @@ class Loginscreen extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Uihelper.CustomText(
+                  Uihelper.customText(
                     text: "Shanmuka Reddy",
                     color: Colors.black,
-                    FontWeight: FontWeight.w100,
+                    fontWeight: FontWeight.w100,
                     fontsize: 15,
                   ),
                   SizedBox(height: 10),
-                  Uihelper.CustomText(
+                  Uihelper.customText(
                     text: "628131XXXX",
                     color: Colors.black,
-                    FontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.bold,
                     fontsize: 15,
                     fontfamily: "bold",
                   ),
@@ -82,14 +82,14 @@ class Loginscreen extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Uihelper.CustomText(
+                          Uihelper.customText(
                             text: "Login  with",
                             color: Colors.white,
-                            FontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w700,
                             fontsize: 14,
                           ),
                           SizedBox(width: 5),
-                          Uihelper.CustomImage(
+                          Uihelper.customImage(
                             img: "zomato.png",
                             height: 40,
                             width: 80,
@@ -99,11 +99,11 @@ class Loginscreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  Uihelper.CustomText(
+                  Uihelper.customText(
                     text:
                         "Access your saved addresses from Zomato automatically!",
                     color: Colors.black,
-                    FontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w400,
                     fontsize: 10,
                   ),
                   //SizedBox(height: 10),
@@ -124,10 +124,10 @@ class Loginscreen extends StatelessWidget {
                     ),
                   ),
 
-                  // Uihelper.CustomText(
+                  // Uihelper.customText(
                   //   text: "or login with phone number",
                   //   color: Color(0XFF269237),
-                  //   FontWeight: FontWeight.w400,
+                  //   fontWeight: FontWeight.w400,
                   //   fontsize: 17,
                   // ),
                 ],

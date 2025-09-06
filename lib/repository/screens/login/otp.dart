@@ -101,10 +101,10 @@ class _OtpState extends State<Otp> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Center(
-                      child: Uihelper.CustomText(
+                      child: Uihelper.customText(
                         text: "Verification",
                         color: Colors.black,
-                        FontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w700,
                         fontsize: 25,
                         fontfamily: "bold",
                       ),
@@ -116,7 +116,7 @@ class _OtpState extends State<Otp> {
                       length: 6,
                       pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
                       showCursor: true,
-                      onCompleted: (pin) => print(pin),
+                      onCompleted: (pin) {},
                     ),
 
                     SizedBox(height: 30),

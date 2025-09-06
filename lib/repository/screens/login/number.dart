@@ -28,10 +28,10 @@ class _NumberState extends State<Number> {
       //     mainAxisAlignment: MainAxisAlignment.center,
       //     children: [
       //       Center(
-      //         child: Uihelper.CustomText(
+      //         child: Uihelper.customText(
       //           text: "Enter Your Number",
       //           color: Colors.black,
-      //           FontWeight: FontWeight.w700,
+      //           fontWeight: FontWeight.w700,
       //           fontsize: 20,
       //           fontfamily: "bold",
       //         ),
@@ -103,10 +103,10 @@ class _NumberState extends State<Number> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Center(
-                      child: Uihelper.CustomText(
+                      child: Uihelper.customText(
                         text: "Login",
                         color: Colors.black,
-                        FontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w700,
                         fontsize: 25,
                         fontfamily: "bold",
                       ),
@@ -128,7 +128,7 @@ class _NumberState extends State<Number> {
                                 border: InputBorder.none,
                                 prefixIcon: Icon(
                                   Icons.mobile_friendly,
-                                  color: Appcolors.Scaffoldbackground,
+                                  color: Appcolors.scaffoldBackground,
                                 ),
                               ),
                             ),

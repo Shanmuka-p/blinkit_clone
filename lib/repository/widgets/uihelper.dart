@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
 class Uihelper {
-  static CustomImage({required String img,required double height,required double width}) {
-    return Image.asset("assets/images/$img",height: height,width: width,);
+  static customImage({
+    required String img,
+    required double height,
+    required double width,
+  }) {
+    return Image.asset("assets/images/$img", height: height, width: width);
   }
 
-  static CustomText({
+  static customText({
     required String text,
     required Color color,
-    required FontWeight FontWeight,
+    required FontWeight fontWeight,
     String? fontfamily,
     required double fontsize,
   }) {
@@ -17,7 +21,7 @@ class Uihelper {
       style: TextStyle(
         fontSize: fontsize,
         fontFamily: fontfamily ?? "regular",
-        fontWeight: FontWeight,
+        fontWeight: fontWeight,
         color: color,
       ),
     );

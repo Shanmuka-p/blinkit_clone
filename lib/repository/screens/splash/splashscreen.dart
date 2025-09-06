@@ -27,11 +27,17 @@ class _SplashscreenState extends State<Splashscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Appcolors.Scaffoldbackground,
+      backgroundColor: Appcolors.scaffoldBackground,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Uihelper.CustomImage(img: "blinkit.jpg", height: 300.0,width: double.infinity)],
+          children: [
+            Uihelper.customImage(
+              img: "blinkit.jpg",
+              height: 300.0,
+              width: double.infinity,
+            ),
+          ],
         ),
       ),
     );

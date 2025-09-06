@@ -23,34 +23,34 @@ class _CartscreenState extends State<Cartscreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Uihelper.CustomText(
+            Uihelper.customText(
               text: "BlinkIt in",
               color: Colors.black,
-              FontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontsize: 12,
               fontfamily: "bold",
             ),
-            Uihelper.CustomText(
+            Uihelper.customText(
               text: "16 minutes",
               color: Colors.black,
-              FontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontsize: 20,
               fontfamily: "bold",
             ),
 
             Row(
               children: [
-                Uihelper.CustomText(
+                Uihelper.customText(
                   text: "HOME - ",
                   color: Colors.black,
-                  FontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.bold,
                   fontsize: 12,
                   fontfamily: "bold",
                 ),
-                Uihelper.CustomText(
+                Uihelper.customText(
                   text: "Shanmuka Reddy, G.mamidada - ",
                   color: Colors.black,
-                  FontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w400,
                   fontsize: 12,
                 ),
                 Image.asset("assets/images/arrow_down.png"),
@@ -108,34 +108,34 @@ class _CartscreenState extends State<Cartscreen> {
         child: Column(
           children: [
             Image.asset("assets/images/shopping_cart.png"),
-            Uihelper.CustomText(
+            Uihelper.customText(
               text: "Reordering will be easy",
               color: Colors.black,
-              FontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w800,
               fontsize: 20,
             ),
             SizedBox(height: 20),
-            Uihelper.CustomText(
+            Uihelper.customText(
               text: "Items you order will show up here so you can buy",
               color: Colors.black,
-              FontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w500,
               fontsize: 10,
             ),
             Center(
-              child: Uihelper.CustomText(
+              child: Uihelper.customText(
                 text: "them again easily.",
                 color: Colors.black,
-                FontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w500,
                 fontsize: 10,
               ),
             ),
             SizedBox(height: 40),
             Padding(
               padding: const EdgeInsets.only(right: 250),
-              child: Uihelper.CustomText(
+              child: Uihelper.customText(
                 text: "Bestsellers",
                 color: Colors.black,
-                FontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w600,
                 fontsize: 16,
                 fontfamily: "bold",
               ),
@@ -195,10 +195,10 @@ class _CartscreenState extends State<Cartscreen> {
                   // Column(
                   //   mainAxisAlignment: MainAxisAlignment.start,
                   //   children: [
-                  //     Uihelper.CustomText(
+                  //     Uihelper.customText(
                   //       text: "Amul Taaza Toned \nFresh Milk",
                   //       color: Colors.black,
-                  //       FontWeight: FontWeight.w400,
+                  //       fontWeight: FontWeight.w400,
                   //       fontsize: 8,
                   //     ),
                   //     Image.asset("assets/images/timer.png"),
@@ -357,10 +357,10 @@ class _CartscreenState extends State<Cartscreen> {
       //           ),
       //         ),
       //       ],
-      //       title: Uihelper.CustomText(
+      //       title: Uihelper.customText(
       //         text: "Blinkit in\n16 minutes",
       //         color: Colors.black,
-      //         FontWeight: FontWeight.w700,
+      //         fontWeight: FontWeight.w700,
       //         fontsize: 20,
       //       ),
       //       flexibleSpace: FlexibleSpaceBar(

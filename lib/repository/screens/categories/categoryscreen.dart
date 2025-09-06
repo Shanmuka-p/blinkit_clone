@@ -9,7 +9,7 @@ class Categoryscreen extends StatefulWidget {
 }
 
 class _CategoryscreenState extends State<Categoryscreen> {
-  var Grocery = [
+  var grocery = [
     {"img": "veg.png", "text": "Vegetables & \nFruits"},
     {"img": "atta.png", "text": "Atta, Dal & \nRice"},
     {"img": "oil.png", "text": "Oil, Ghee & \nMasala"},
@@ -47,34 +47,34 @@ class _CategoryscreenState extends State<Categoryscreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Uihelper.CustomText(
+            Uihelper.customText(
               text: "BlinkIt in",
               color: Colors.black,
-              FontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontsize: 12,
               fontfamily: "bold",
             ),
-            Uihelper.CustomText(
+            Uihelper.customText(
               text: "16 minutes",
               color: Colors.black,
-              FontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontsize: 20,
               fontfamily: "bold",
             ),
 
             Row(
               children: [
-                Uihelper.CustomText(
+                Uihelper.customText(
                   text: "HOME - ",
                   color: Colors.black,
-                  FontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.bold,
                   fontsize: 12,
                   fontfamily: "bold",
                 ),
-                Uihelper.CustomText(
+                Uihelper.customText(
                   text: "Shanmuka Reddy, G.mamidada - ",
                   color: Colors.black,
-                  FontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w400,
                   fontsize: 12,
                 ),
                 Image.asset("assets/images/arrow_down.png"),
@@ -138,10 +138,10 @@ class _CategoryscreenState extends State<Categoryscreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(height: 10),
-                  Uihelper.CustomText(
-                    text: "Grocery & Kitchen",
+                  Uihelper.customText(
+                    text: "grocery & Kitchen",
                     color: Colors.black,
-                    FontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w700,
                     fontsize: 14,
                     fontfamily: "bold",
                   ),
@@ -166,23 +166,23 @@ class _CategoryscreenState extends State<Categoryscreen> {
                               borderRadius: BorderRadius.circular(10),
                               color: Color(0XFFD9EBEB),
                             ),
-                            child: Uihelper.CustomImage(
-                              img: Grocery[index]["img"].toString(),
+                            child: Uihelper.customImage(
+                              img: grocery[index]["img"].toString(),
                               height: double.infinity,
                               width: double.infinity,
                             ),
                           ),
                         ),
-                        Uihelper.CustomText(
-                          text: Grocery[index]["text"].toString(),
+                        Uihelper.customText(
+                          text: grocery[index]["text"].toString(),
                           color: Colors.black,
-                          FontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w400,
                           fontsize: 10,
                         ),
                       ],
                     );
                   },
-                  itemCount: Grocery.length,
+                  itemCount: grocery.length,
                   scrollDirection: Axis.horizontal,
                 ),
               ),
@@ -206,17 +206,17 @@ class _CategoryscreenState extends State<Categoryscreen> {
                               borderRadius: BorderRadius.circular(10),
                               color: Color(0XFFD9EBEB),
                             ),
-                            child: Uihelper.CustomImage(
+                            child: Uihelper.customImage(
                               img: second[index]["img"].toString(),
                               height: double.infinity,
                               width: double.infinity,
                             ),
                           ),
                         ),
-                        Uihelper.CustomText(
+                        Uihelper.customText(
                           text: second[index]["text"].toString(),
                           color: Colors.black,
-                          FontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w400,
                           fontsize: 10,
                         ),
                       ],
@@ -232,10 +232,10 @@ class _CategoryscreenState extends State<Categoryscreen> {
               padding: const EdgeInsets.only(left: 20.0),
               child: Row(
                 children: [
-                  Uihelper.CustomText(
+                  Uihelper.customText(
                     text: "Snacks & Drinks",
                     color: Colors.black,
-                    FontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w700,
                     fontsize: 14,
                     fontfamily: "bold",
                   ),
@@ -260,17 +260,17 @@ class _CategoryscreenState extends State<Categoryscreen> {
                               borderRadius: BorderRadius.circular(10),
                               color: Color(0XFFD9EBEB),
                             ),
-                            child: Uihelper.CustomImage(
+                            child: Uihelper.customImage(
                               img: third[index]["img"].toString(),
                               height: double.infinity,
                               width: double.infinity,
                             ),
                           ),
                         ),
-                        Uihelper.CustomText(
+                        Uihelper.customText(
                           text: third[index]["text"].toString(),
                           color: Colors.black,
-                          FontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w400,
                           fontsize: 10,
                         ),
                       ],
@@ -286,10 +286,10 @@ class _CategoryscreenState extends State<Categoryscreen> {
               padding: const EdgeInsets.only(left: 10.0),
               child: Row(
                 children: [
-                  Uihelper.CustomText(
+                  Uihelper.customText(
                     text: "Household Essentials",
                     color: Colors.black,
-                    FontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w700,
                     fontsize: 14,
                     fontfamily: "bold",
                   ),
@@ -314,17 +314,17 @@ class _CategoryscreenState extends State<Categoryscreen> {
                               borderRadius: BorderRadius.circular(10),
                               color: Color(0XFFD9EBEB),
                             ),
-                            child: Uihelper.CustomImage(
+                            child: Uihelper.customImage(
                               img: four[index]["img"].toString(),
                               height: double.infinity,
                               width: double.infinity,
                             ),
                           ),
                         ),
-                        Uihelper.CustomText(
+                        Uihelper.customText(
                           text: four[index]["text"].toString(),
                           color: Colors.black,
-                          FontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w400,
                           fontsize: 10,
                         ),
                       ],

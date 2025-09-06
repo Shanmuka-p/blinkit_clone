@@ -12,21 +12,21 @@ class Bottomnavscreen extends StatefulWidget {
 }
 
 class _BottomnavscreenState extends State<Bottomnavscreen> {
-  int curr_index = 0;
+  int currIndex = 0;
   List<Widget> pages = [Homescreen(), Cartscreen(), Categoryscreen(), Print()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(index: curr_index, children: pages),
+      body: IndexedStack(index: currIndex, children: pages),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        currentIndex: curr_index,
+        currentIndex: currIndex,
         //currentIndex: _selectedIndex,
         selectedItemColor: Colors.amberAccent,
-        //onTap: curr_index,
+        //onTap: currIndex,
         onTap: (index) {
           setState(() {
-            curr_index = index;
+            currIndex = index;
           });
         },
         items: [

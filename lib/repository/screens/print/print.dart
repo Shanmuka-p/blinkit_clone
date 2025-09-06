@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:blinkit_clone/repository/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Print extends StatefulWidget {
   const Print({super.key});
@@ -9,6 +12,19 @@ class Print extends StatefulWidget {
 }
 
 class _PrintState extends State<Print> {
+  File? _selectedImage;
+
+  Future<void> _pickImageFromGallery() async {
+    final returnedImage = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+    );
+    if (returnedImage != null) {
+      setState(() {
+        _selectedImage = File(returnedImage.path);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,34 +36,34 @@ class _PrintState extends State<Print> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Uihelper.CustomText(
+            Uihelper.customText(
               text: "BlinkIt in",
               color: Colors.black,
-              FontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontsize: 12,
               fontfamily: "bold",
             ),
-            Uihelper.CustomText(
+            Uihelper.customText(
               text: "16 minutes",
               color: Colors.black,
-              FontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontsize: 20,
               fontfamily: "bold",
             ),
 
             Row(
               children: [
-                Uihelper.CustomText(
+                Uihelper.customText(
                   text: "HOME - ",
                   color: Colors.black,
-                  FontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.bold,
                   fontsize: 12,
                   fontfamily: "bold",
                 ),
-                Uihelper.CustomText(
+                Uihelper.customText(
                   text: "Shanmuka Reddy, G.mamidada - ",
                   color: Colors.black,
-                  FontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w400,
                   fontsize: 12,
                 ),
                 Image.asset("assets/images/arrow_down.png"),
@@ -106,23 +122,23 @@ class _PrintState extends State<Print> {
           // mainAxisAlignment: MainAxisAlignment.start,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Uihelper.CustomText(
+            Uihelper.customText(
               text: "Print Store",
               color: Colors.black,
-              FontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontsize: 35,
             ),
-            Uihelper.CustomText(
+            Uihelper.customText(
               text: "Blinkit ensures secure prints at every stage",
               color: Color(0XFF9C9C9C),
-              FontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w700,
               fontsize: 14,
             ),
             SizedBox(height: 60),
             Padding(
               padding: const EdgeInsets.only(right: 10),
               child: Container(
-                height: 200,
+                height: 250,
                 width: double.infinity,
                 decoration: BoxDecoration(color: Colors.amber[100]),
                 child: Stack(
@@ -144,44 +160,48 @@ class _PrintState extends State<Print> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Uihelper.CustomText(
+                          Uihelper.customText(
                             text: "Documents",
                             color: Colors.black,
-                            FontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w700,
                             fontsize: 14,
                           ),
                           SizedBox(height: 10),
-                          Uihelper.CustomText(
+                          Uihelper.customText(
                             text: "✦ Price starting at rs 3/page",
                             color: Color(0XFF9C9C9C),
-                            FontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w400,
                             fontsize: 14,
                           ),
-                          Uihelper.CustomText(
+                          Uihelper.customText(
                             text: "✦ Paper quality: 70 GSM",
                             color: Color(0XFF9C9C9C),
-                            FontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w400,
                             fontsize: 14,
                           ),
-                          Uihelper.CustomText(
+                          Uihelper.customText(
                             text: "✦ Single side prints",
                             color: Color(0XFF9C9C9C),
-                            FontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w400,
                             fontsize: 14,
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 15),
                           ElevatedButton(
                             style: ButtonStyle(
                               backgroundColor: WidgetStateProperty.all(
                                 Color(0XFF27AF34),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: _pickImageFromGallery,
                             child: Text(
                               "Upload Files",
                               style: TextStyle(color: Colors.white),
                             ),
                           ),
+                          //SizedBox(height: 10),
+                          _selectedImage != null
+                              ? Image.file(_selectedImage!)
+                              : Text("Please Select the image"),
                         ],
                       ),
                     ),
