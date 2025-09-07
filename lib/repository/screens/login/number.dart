@@ -1,6 +1,8 @@
 import 'package:blinkit_clone/domain/constants/appcolors.dart';
 import 'package:blinkit_clone/repository/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_intl_phone_field/flutter_intl_phone_field.dart';
+import 'package:intl_phone_field/country_picker_dialog.dart';
 
 class Number extends StatefulWidget {
   const Number({super.key});
@@ -10,13 +12,13 @@ class Number extends StatefulWidget {
 }
 
 class _NumberState extends State<Number> {
-  TextEditingController countrycode = TextEditingController();
-  @override
-  void initState() {
-    countrycode.text = "+91";
+  // TextEditingController countrycode = TextEditingController();
+  // @override
+  // void initState() {
+  //   countrycode.text = "+91";
 
-    super.initState();
-  }
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -112,42 +114,20 @@ class _NumberState extends State<Number> {
                       ),
                     ),
                     SizedBox(height: 30),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.blueGrey),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        //color: Colors.blueGrey,
+                    IntlPhoneField(
+                      decoration: InputDecoration(
+                        labelText: "Phone Number",
+                        border: OutlineInputBorder(borderSide: BorderSide()),
                       ),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 80,
-                            child: TextField(
-                              controller: countrycode,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                prefixIcon: Icon(
-                                  Icons.mobile_friendly,
-                                  color: Appcolors.scaffoldBackground,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          Text(
-                            "|",
-                            style: TextStyle(color: Colors.black, fontSize: 30),
-                          ),
-                          Expanded(
-                            child: TextField(
-                              decoration: InputDecoration(
-                                hintText: "Phone",
-                                border: InputBorder.none,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                      languageCode: 'en',
+                      // dropdownDecoration: BoxDecoration(
+                      //   color: Colors.amber,
+                      //   shape: BoxShape.rectangle,
+                      // ),
+                      invalidMessage: "Invalid Phone number",
+                      keyboardType: TextInputType.phone,
+                      //enabled: false,
+                      //style: TextStyle(fontSize: 20),
                     ),
                     SizedBox(height: 30),
                     SizedBox(
