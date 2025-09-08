@@ -1,8 +1,6 @@
-import 'package:blinkit_clone/domain/constants/appcolors.dart';
 import 'package:blinkit_clone/repository/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_intl_phone_field/flutter_intl_phone_field.dart';
-import 'package:intl_phone_field/country_picker_dialog.dart';
 
 class Number extends StatefulWidget {
   const Number({super.key});
