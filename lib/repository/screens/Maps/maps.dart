@@ -13,7 +13,8 @@ class _MapsState extends State<Maps> {
     return Scaffold(
       body: container(
         width: 110,
-        height: 100
+        height: 100,
+        decoration: Boxdecoration(),
       ),
     );
   }
