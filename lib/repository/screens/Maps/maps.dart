@@ -14,7 +14,9 @@ class _MapsState extends State<Maps> {
       body: container(
         width: 110,
         height: 100,
-        decoration: Boxdecoration(),
+        decoration: Boxdecoration(
+          color: Colors.black,
+        ),
       ),
     );
   }
