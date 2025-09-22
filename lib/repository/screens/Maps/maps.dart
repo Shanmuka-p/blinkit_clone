@@ -16,6 +16,7 @@ class _MapsState extends State<Maps> {
         height: 100,
         decoration: Boxdecoration(
           color: Colors.black,
+          border: 
         ),
       ),
     );
