@@ -1,6 +1,6 @@
 # blinkit_clone
 
-A new Flutter project.
+A new Flutter project for the sake of learning of the structure of the large products.
 
 ### Getting Started ###
 
