@@ -8,3 +8,5 @@ This project is a starting point for a Flutter application. I used the new packa
 Learned the structure of the new big companies and their app design.
 
 ## New Learnings ##
+
+This is a self assesment task to score my flutter UI building skills. 
