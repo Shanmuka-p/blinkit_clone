@@ -1,6 +1,6 @@
 # Blinkit Clone (Flutter)
 
-A Flutter-based clone/prototype of the Blinkit mobile app (grocery & quick commerce). This project demonstrates a minimal but practical mobile app structure with authentication flow (phone number → OTP), theming, use of device preview for web, and a small set of commonly used UI packages.
+A Flutter-based clone/prototype of the Blinkit mobile app (grocery & quick commerce). This project demonstrates a minimal but practical mobile app structure with authentication flow (phone number → OTP), theming, use of device preview for web, and a small set of commonly used UI packages. This project enhanced my frontend UI Skills and structure of fully professional app.
 
 > Status: Prototype / learning project — not production-ready. Designed for demonstration, learning, and incremental extension.
 
