@@ -1,5 +1,9 @@
 import 'package:blinkit_clone/repository/widgets/uihelper.dart';
+import 'package:blinkit_clone/domain/providers/cart_provider.dart';
+import 'package:blinkit_clone/domain/models/product_model.dart';
+import 'package:blinkit_clone/repository/screens/cartscreen/cartscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -20,13 +24,93 @@ class _HomescreenState extends State<Homescreen> {
     {"img": "home_sweets.png", "text": "Royal Gulab Jamun \nBy Bikano"},
     {"img": "banner.png", "text": "Bikaji Bhujia"},
   ];
-  var Grocery = [
+  var grocery = [
     {"img": "veg.png", "text": "Vegetables & \nFruits"},
     {"img": "atta.png", "text": "Atta, Dal & \nRice"},
     {"img": "oil.png", "text": "Oil, Ghee & \nMasala"},
     {"img": "milk.png", "text": "Dairy, Bread & \nMilk"},
     {"img": "bis.png", "text": "Biscuits &  \nBakery"},
   ];
+
+  Widget _buildAddButton(BuildContext context, String imagePath) {
+    final filename = imagePath.split('/').last;
+    final product = mockProducts.firstWhere(
+      (p) => p.image == filename,
+      orElse: () => mockProducts.first,
+    );
+
+    return Consumer<CartProvider>(
+      builder: (context, cart, child) {
+        final qty = cart.getProductQuantity(product.id);
+        if (qty > 0) {
+          return Container(
+            height: 28,
+            width: 70,
+            decoration: BoxDecoration(
+              color: const Color(0XFF27AF34),
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.15),
+                  blurRadius: 4,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                GestureDetector(
+                  onTap: () => cart.removeFromCart(product),
+                  child: const Icon(Icons.remove, color: Colors.white, size: 14),
+                ),
+                Text(
+                  qty.toString(),
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 11,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => cart.addToCart(product),
+                  child: const Icon(Icons.add, color: Colors.white, size: 14),
+                ),
+              ],
+            ),
+          );
+        } else {
+          return SizedBox(
+            height: 28,
+            width: 60,
+            child: OutlinedButton(
+              onPressed: () => cart.addToCart(product),
+              style: OutlinedButton.styleFrom(
+                padding: EdgeInsets.zero,
+                side: const BorderSide(
+                  color: Color(0XFF27AF34),
+                  width: 1.5,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                backgroundColor: Colors.white,
+              ),
+              child: const Text(
+                "ADD",
+                style: TextStyle(
+                  color: Color(0XFF27AF34),
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          );
+        }
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -222,34 +306,9 @@ class _HomescreenState extends State<Homescreen> {
                           ],
                         ),
                         Positioned(
-                          left: 60,
+                          left: 50,
                           bottom: 210,
-                          child: SizedBox(
-                            height: 28,
-                            width: 40,
-                            child: OutlinedButton(
-                              onPressed: () {},
-                              style: OutlinedButton.styleFrom(
-                                //minimumSize: Size(1, 2),
-                                padding: EdgeInsets.zero,
-                                side: BorderSide(
-                                  color: Color(0XFF27AF34),
-                                  width: 2,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                backgroundColor: Colors.white,
-                              ),
-                              child: Text(
-                                "Add",
-                                style: TextStyle(
-                                  color: Color(0XFF27AF34),
-                                  fontSize: 6,
-                                ),
-                              ),
-                            ),
-                          ),
+                          child: _buildAddButton(context, home1[index]["img"].toString()),
                         ),
                        // SizedBox(height: 10),
                         Positioned(
@@ -313,7 +372,7 @@ class _HomescreenState extends State<Homescreen> {
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Uihelper.customImage(
-                        img: Grocery[index]["img"].toString(),
+                        img: grocery[index]["img"].toString(),
                         height: double.infinity,
                         width: double.infinity,
                       ),
@@ -321,12 +380,94 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                   SizedBox(height: 20),
                   Uihelper.customText(
-                    text: Grocery[index]["text"].toString(),
+                    text: grocery[index]["text"].toString(),
                     color: Colors.black,
                     fontWeight: FontWeight.w400,
                     fontsize: 10,
                   ),
                 ],
+              );
+            },
+          ),
+          // Dynamic Floating Cart Banner (Sticky Bottom)
+          Consumer<CartProvider>(
+            builder: (context, cart, child) {
+              if (cart.totalItemsCount == 0) return const SizedBox.shrink();
+              return Positioned(
+                bottom: 15,
+                left: 15,
+                right: 15,
+                child: Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: const Color(0XFF0C831F), // Blinkit brand green
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.25),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          const Icon(Icons.shopping_bag_outlined, color: Colors.white, size: 24),
+                          const SizedBox(width: 12),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "${cart.totalItemsCount} ITEM${cart.totalItemsCount > 1 ? 'S' : ''}",
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 10,
+                                  letterSpacing: 0.5,
+                                ),
+                              ),
+                              Text(
+                                "₹${cart.grandTotal.toStringAsFixed(0)}",
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const Cartscreen()),
+                          );
+                        },
+                        child: const Row(
+                          children: [
+                            Text(
+                              "View Cart",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                              ),
+                            ),
+                            SizedBox(width: 4),
+                            Icon(Icons.arrow_forward_ios, color: Colors.white, size: 14),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               );
             },
           ),

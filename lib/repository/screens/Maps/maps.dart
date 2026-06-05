@@ -11,14 +11,8 @@ class _MapsState extends State<Maps> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: container(
-        width: 110,
-        height: 100,
-        decoration: Boxdecoration(
-          color: Colors.black,
-          border: 
-        ),
-      ),
+      
+      
     );
   }
 }

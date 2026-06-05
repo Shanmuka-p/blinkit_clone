@@ -2,7 +2,9 @@ import 'package:blinkit_clone/repository/screens/cartscreen/cartscreen.dart';
 import 'package:blinkit_clone/repository/screens/categories/categoryscreen.dart';
 import 'package:blinkit_clone/repository/screens/home/homescreen.dart';
 import 'package:blinkit_clone/repository/screens/print/print.dart';
+import 'package:blinkit_clone/domain/providers/cart_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class SalomanBottomBar extends StatefulWidget {
@@ -49,7 +51,24 @@ class _SalomanBottomBarState extends State<SalomanBottomBar> {
                 ),
 
                 SalomonBottomBarItem(
-                  icon: const Icon(Icons.shopping_cart),
+                  icon: Consumer<CartProvider>(
+                    builder: (context, cart, child) {
+                      return cart.totalItemsCount > 0
+                          ? Badge(
+                              label: Text(
+                                cart.totalItemsCount.toString(),
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              backgroundColor: const Color(0XFF27AF34),
+                              child: const Icon(Icons.shopping_cart),
+                            )
+                          : const Icon(Icons.shopping_cart);
+                    },
+                  ),
                   title: const Text("Cart"),
                   selectedColor: Colors.green,
                 ),
