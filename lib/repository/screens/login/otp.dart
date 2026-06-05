@@ -1,3 +1,4 @@
+import 'package:blinkit_clone/repository/screens/bottomnav/saloman_bottom_bar.dart';
 import 'package:blinkit_clone/repository/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
@@ -127,7 +128,15 @@ class _OtpState extends State<Otp> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.amber,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SalomanBottomBar(),
+                            ),
+                            (route) => false,
+                          );
+                        },
                         child: Text(
                           "Submit",
                           selectionColor: Colors.amber,
