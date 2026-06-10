@@ -250,7 +250,6 @@ Steps:
 
 ## License & contact
 
-- This repository contains a simple demo/learning project. Add a proper license file (e.g., MIT) if you plan to share or open-source beyond personal use.
 - Author / Maintainer: Shanmuka-p
 - For questions or collaboration: open an issue or contact via your GitHub profile.
 
